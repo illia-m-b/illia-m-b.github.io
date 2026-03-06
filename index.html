@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>GTM Пісочниця - Прикладна Математика</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; padding: 40px; background: #f4f7f6; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .btn { display: inline-block; padding: 12px 24px; margin: 10px 5px; border: none; border-radius: 5px; cursor: pointer; color: white; text-decoration: none; font-weight: bold; }
+        .primary { background: #2ecc71; }
+        .secondary { background: #3498db; }
+        .download { background: #e67e22; }
+        input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Лабораторна робота: Аналітика</h2>
+        <p>1. Тестування кліків на кнопки:</p>
+        <button id="main_registration" class="btn primary">Подати заяву (ID: main_registration)</button>
+        <button class="btn secondary">Дізнатися більше (Без ID, тільки клас)</button>
+
+        <p>2. Тестування завантаження файлів:</p>
+        <a href="curriculum_applied_math.pdf" class="btn download" id="pdf_download">Завантажити план (PDF)</a>
+
+        <p>3. Тестування форми (Макроконверсія):</p>
+        <form id="admission_form">
+            <input type="email" id="user_email" placeholder="Ваш Email" required>
+            <select id="course_select">
+                <option value="math">Прикладна математика</option>
+                <option value="sys_analysis">Системний аналіз</option>
+            </select>
+            <button type="submit" class="btn primary">Зареєструватися</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('admission_form').onsubmit = function(e) {
+            e.preventDefault();
+            alert('Форму відправлено! Перевірте подію в GTM Preview.');
+        };
+    </script>
+</body>
+</html>
